@@ -1,0 +1,3 @@
+[submodule "service/splatnet2statink"]
+	path = service/splatnet2statink
+	url = https://github.com/cumet04/splatnet2statink.git

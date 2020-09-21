@@ -1,7 +1,11 @@
 {
   "name": "splatnet2statink-lambda",
   "license": "MIT",
+  "scripts": {
+    "deploy": "cd service && serverless deploy -v"
+  },
   "dependencies": {
-    "serverless": "^2.1.1"
+    "serverless": "^2.1.1",
+    "serverless-python-requirements": "^5.1.0"
   }
 }

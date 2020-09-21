@@ -1,24 +1,16 @@
-import json
+import os
 
+def run(event, context):
+    os.environ['CONFIG_FILE_PATH'] = '/tmp/config.txt'
+    with open(os.environ['CONFIG_FILE_PATH'], mode='w') as f:
+        f.write(os.environ['CONFIG_TXT'])
 
-def hello(event, context):
-    body = {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
-        "input": event
-    }
-
-    response = {
-        "statusCode": 200,
-        "body": json.dumps(body)
-    }
-
-    return response
-
-    # Use this code if you don't use the http event with the LAMBDA-PROXY
-    # integration
-    """
-    return {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
-        "event": event
-    }
-    """
+    from splatnet2statink.splatnet2statink import check_for_updates, populate_battles
+    if check_for_updates():
+        return
+    populate_battles(
+        False, # is_s
+        False, # is_t
+        True,  # is_r
+        False  # debug
+    )
