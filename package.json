@@ -1,0 +1,7 @@
+{
+  "name": "splatnet2statink-lambda",
+  "license": "MIT",
+  "dependencies": {
+    "serverless": "^2.1.1"
+  }
+}
